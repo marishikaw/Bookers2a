@@ -38,6 +38,11 @@
       <% end %>
     <% end %>
     </th>
+    <th>
+      <% if user != current_user %>
+        <%= link_to 'chatを始める', chat_path(user.id) %>
+      <% end %>  
+    </th>
   </tr>
 </table>
 
