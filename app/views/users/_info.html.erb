@@ -40,7 +40,12 @@
     </th>
     <th>
       <% if user != current_user %>
-        <%= link_to 'chatを始める', chat_path(user.id) %>
+        
+        <% if (current_user.following? user) && (user.following? current_user)  %>
+          <%= link_to 'chatを始める', chat_path(user.id) %>
+          
+        <% end %>
+        
       <% end %>  
     </th>
   </tr>
